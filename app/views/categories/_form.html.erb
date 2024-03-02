@@ -1,0 +1,13 @@
+<%= form_with(model: category) do |form| %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <% if category.errors[:name].any? %>
+      <div class="error-message"><%= category.errors[:name].first %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

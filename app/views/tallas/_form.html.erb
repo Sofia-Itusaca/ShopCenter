@@ -1,0 +1,15 @@
+
+
+<%= form_with(model: talla) do |form| %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <% if talla.errors[:name].any? %>
+      <div class="error-message"><%= talla.errors[:name].first %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

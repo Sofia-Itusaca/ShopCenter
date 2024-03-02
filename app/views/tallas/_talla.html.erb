@@ -1,0 +1,8 @@
+<div id="<%= dom_id talla %>">
+  <%= talla.name %>
+  <%= link_to "Edit", edit_talla_path(talla) %>
+  <%=link_to "Delete",talla_path(talla), data:{
+    turbo_method: :delete,
+    turbo_confirm: "Alerta,¿estas seguro?"
+}%>
+</div>

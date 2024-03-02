@@ -1,0 +1,14 @@
+<h1 class='title'><%=@producto.titulo%></h1>
+<%=image_tag @producto.photo, width:200 if @producto.photo.attached?%>
+<p class='description'>Detalles : <%=@producto.description%></p>
+<p class='color'>Color : <%=@producto.color%></p>
+<p class='stock'>Stock : <%=@producto.stock%></p>
+<span class='price'>Precio : <%=@producto.price%></span>
+<br>
+<br>
+<%= link_to "Editar Producto", edit_producto_path(@producto) %>
+
+<%= link_to "Delete", producto_path(@producto), data: {
+    turbo_method: :delete,
+    turbo_confirm: 'Alerta, ¿estás seguro?'
+} %>
