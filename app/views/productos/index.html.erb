@@ -1,3 +1,32 @@
-<h2>PRODUCTOS</h2>
+<%= turbo_frame_tag 'home' do %>
+  <h2>PRODUCTOS</h2>
+  <%= form_with url: productos_path, method: :get do |form| %>
+    <%= form.text_field :query_text, placeholder: 'Buscar',
+      onChange: 'this.form.requestSubmit()', value: params[:query_text] %>
 
-<%=render partial: 'producto', collection: @productos %>
+    <%= form.number_field :min_price, placeholder: 'MinPrice',
+      onChange: 'this.form.requestSubmit()', value: params[:min_price] %>
+
+    <%= form.number_field :max_price, placeholder: 'MaxPrice',
+      onChange: 'this.form.requestSubmit()', value: params[:max_price] %>
+
+    <%= form.select :order_by, options_for_select([["Recientes","newest"],
+      ["Más Caros","expensive"],["Más Baratos","cheapest"]],
+      params[:order_by]), {}, { onChange: 'this.form.requestSubmit()' } %>
+  <% end %>
+
+  <%= link_to 'All', productos_path %>
+  <%= render partial: 'category', collection: @categories %>
+
+
+  <%= turbo_frame_tag "productos-#{@pagy.page}", class: 'productos' do %>
+  <div style="display: flex; flex-wrap: wrap;">
+    <%= render partial: 'producto', collection: @productos %>
+  </div>
+  <!-- Si hay una página siguiente, carga los siguientes productos -->
+  <%= turbo_frame_tag "productos-#{@pagy.next}", class: 'productos', src: pagy_url_for(@pagy, @pagy.next), loading: :lazy if @pagy.next %>
+<% end %>
+
+
+
+<% end %>

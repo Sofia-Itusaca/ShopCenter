@@ -1,15 +1,260 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+pantalones:
+  titulo: Pantalones
+  description: Mezclilla
+  price: 50
+  color: Azul
+  stock: 10
+  category: Pantalones
+  talla: Small
 
-one:
-  titulo: MyString
-  description: MyText
-  price: 1.5
-  color: MyString
-  stock: 1
+camiseta:
+  titulo: Camiseta
+  description: Algodón
+  price: 15
+  color: Blanco
+  stock: 20
+  category: Camiseta
+  talla: Gordo
 
-two:
-  titulo: MyString
-  description: MyText
-  price: 1.5
-  color: MyString
-  stock: 1
+chaqueta:
+  titulo: Chaqueta
+  description: Cuero sintético
+  price: 80
+  color: Marrón
+  stock: 8
+  category: Chaqueta
+  talla: Mediano
+
+vestido:
+  titulo: Vestido
+  description: Floral
+  price: 45
+  color: Rosa
+  stock: 15
+  category: Vestido
+  talla: extra_grande
+
+falda:
+  titulo: Falda
+  description: Plisada
+  price: 35
+  color: Negro
+  stock: 12
+  category: Falda
+  talla: extra_extra_grande
+
+sudadera:
+  titulo: Sudadera
+  description: Con capucha
+  price: 30
+  color: Gris
+  stock: 18
+  category: Sudadera
+  talla: Small
+
+traje_de_baño:
+  titulo: Traje de baño
+  description: Dos piezas
+  price: 60
+  color: Rojo
+  stock: 7
+  category: Traje_de_baño
+  talla: Gordo
+
+chaleco:
+  titulo: Chaleco
+  description: De lana
+  price: 55
+  color: Verde
+  stock: 9
+  category: Chaleco
+  talla: Mediano
+
+sombrero:
+  titulo: Sombrero
+  description: De paja
+  price: 20
+  color: Beige
+  stock: 25
+  category: Sombrero
+  talla: extra_grande
+
+zapatos:
+  titulo: Zapatos
+  description: De cuero
+  price: 70
+  color: Negro
+  stock: 14
+  category: Zapatos
+  talla: extra_extra_grande
+
+gorra:
+  titulo: Gorra
+  description: De béisbol
+  price: 10
+  color: Azul marino
+  stock: 30
+  category: Gorra
+  talla: Mediano
+
+bufanda:
+  titulo: Bufanda
+  description: Lana tejida
+  price: 25
+  color: Gris
+  stock: 17
+  category: Bufanda
+  talla: extra_grande
+
+calcetines:
+  titulo: Calcetines
+  description: Algodón elástico
+  price: 8
+  color: Blanco
+  stock: 22
+  category: Calcetines
+  talla: Small
+
+abrigo_de_invierno:
+  titulo: Abrigo de invierno
+  description: Forrado con piel sintética
+  price: 120
+  color: Negro
+  stock: 6
+  category: Abrigo
+  talla: extra_extra_grande
+
+pantalones_cortos:
+  titulo: Pantalones cortos
+  description: Vaqueros
+  price: 20
+  color: Azul claro
+  stock: 28
+  category: Pantalones
+  talla: Gordo
+
+camisa:
+  titulo: Camisa
+  description: De lino
+  price: 40
+  color: Blanco
+  stock: 13
+  category: Camisa
+  talla: Small
+
+chaqueta_de_plumas:
+  titulo: Chaqueta de plumas
+  description: Ligera y abrigada
+  price: 90
+  color: Azul oscuro
+  stock: 5
+  category: Chaqueta
+  talla: extra_extra_grande
+
+falda_larga:
+  titulo: Falda larga
+  description: Estampada floral
+  price: 55
+  color: Amarillo
+  stock: 11
+  category: Falda
+  talla: Gordo
+
+chándal:
+  titulo: Chándal
+  description: Conjunto deportivo
+  price: 70
+  color: Gris oscuro
+  stock: 9
+  category: Chándal
+  talla: Mediano
+
+suéter:
+  titulo: Suéter
+  description: De cachemira
+  price: 100
+  color: Beige
+  stock: 8
+  category: Suéter
+  talla: extra_extra_grande
+
+botas:
+  titulo: Botas
+  description: De ante
+  price: 85
+  color: Marrón oscuro
+  stock: 10
+  category: Botas
+  talla: Mediano
+
+gorro:
+  titulo: Gorro
+  description: De lana
+  price: 15
+  color: Rojo
+  stock: 21
+  category: Gorro
+  talla: extra_grande
+
+corbata:
+  titulo: Corbata
+  description: De seda
+  price: 30
+  color: Negro
+  stock: 18
+  category: Corbata
+  talla: Gordo
+
+leggings:
+  titulo: Leggings
+  description: Elásticos
+  price: 18
+  color: Negro
+  stock: 16
+  category: Leggings
+  talla: extra_extra_grande
+
+sombrero_de_sol:
+  titulo: Sombrero de sol
+  description: De paja trenzada
+  price: 25
+  color: Blanco
+  stock: 24
+  category: Sombrero
+  talla: Mediano
+
+chaqueta_de_cuero:
+  titulo: Chaqueta de cuero
+  description: Estilo motociclista
+  price: 150
+  color: Marrón
+  stock: 7
+  category: Chaqueta
+  talla: extra_extra_grande
+
+bufanda_infantil:
+  titulo: Bufanda infantil
+  description: Con dibujos animados
+  price: 12
+  color: Multicolor
+  stock: 32
+  category: Bufanda
+  talla: Small
+
+mallas:
+  titulo: Mallas
+  description: De compresión
+  price: 35
+  color: Negro
+  stock: 19
+  category: Mallas
+  talla: Gordo
+
+bufanda_de_cachemira:
+  titulo: Bufanda de cachemira
+  description: Suave y cálida
+  price: 70
+  color: Gris claro
+  stock: 14
+  category: Bufanda
+  talla: Mediano

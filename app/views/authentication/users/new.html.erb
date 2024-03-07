@@ -1,0 +1,29 @@
+<%= form_with(model: @user) do |form| %>
+    <div >
+      <%= form.label :email %>
+      <%= form.email_field :email %>
+      <% if @user.errors[:email].any? %>
+        <div class="error-message"><%= @user.errors[:email].first %></div>
+      <% end %>
+    </div>
+  
+    <div >
+      <%= form.label :username %>
+      <%= form.text_field :username %>
+      <% if @user.errors[:username].any? %>
+        <div class="error-message"><%= @user.errors[:username].first %></div>
+      <% end %>
+    </div>
+  
+    <div >
+      <%= form.label :password %>
+      <%= form.password_field :password %>
+      <% if @user.errors[:password].any? %>
+        <div class="error-message"><%= @user.errors[:password].first %></div>
+      <% end %>
+    </div>
+    <%= form.hidden_field :admin, value: false %>
+    <div>
+      <%= form.submit %>
+    </div>
+<% end %>

@@ -1,0 +1,57 @@
+
+/* Estilos para el contenedor */
+.producto-wrapper {
+    background-color: gray;
+    padding: 10px;
+    margin-bottom: 15px; /* Espacio entre filas */
+    height: 450px;
+    width: 350px;
+    border-radius: 15px;
+    margin-right: 15px;
+  }
+  .producto-wrapper:nth-child(3n) {
+    margin-right: 0; /* Esto elimina el margen derecho para el tercer producto en cada fila */
+  }
+  .link-unstyled {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  
+  .producto-photo {
+    margin-left: 60px;
+    width: 200px;
+    height: 250px;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  /* Estilos para la imagen */
+  .producto-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Para que la imagen cubra todo el contenedor sin deformarse */
+  }
+
+  .producto-description{
+    font-size: 20px;
+    color: #555;
+    font-family: Arial;
+    font-style: italic;
+    font-weight: lighter;
+  }
+  /* Estilos para el título */
+  .producto-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+  }
+  
+  /* Estilos para el precio */
+  .producto-price {
+    font-size: 18px;
+    color: red;
+    font-weight: bold;
+  }
+  

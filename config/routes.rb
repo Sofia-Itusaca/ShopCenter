@@ -6,8 +6,10 @@ Rails.application.routes.draw do
   root to: 'productos#index'
 
   resources :productos 
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+   #para que podamos estruccturar el codigo como si fuerean carpetas
+   namespace :authentication, path: '', as:'' do
+    resources :users, only: [:new, :create]
+    resources :sessions, only: [:new, :create]
+  end
 end

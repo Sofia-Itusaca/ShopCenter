@@ -1,7 +1,17 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+Small:
+  name: S
 
-one:
-  name: MyString
+Gordo:
+  name: G
 
-two:
-  name: MyString
+Mediano:
+  name: M
+
+extra_grande:
+  name: XL
+
+extra_extra_grande:
+  name: XXL
+
+

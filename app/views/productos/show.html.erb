@@ -6,9 +6,11 @@
 <span class='price'>Precio : <%=@producto.price%></span>
 <br>
 <br>
-<%= link_to "Editar Producto", edit_producto_path(@producto) %>
+<% if Current.user && Current.user.admin? %>
+    <%= link_to "Editar Producto", edit_producto_path(@producto) %>
 
-<%= link_to "Delete", producto_path(@producto), data: {
-    turbo_method: :delete,
-    turbo_confirm: 'Alerta, ¿estás seguro?'
-} %>
+    <%= link_to "Delete", producto_path(@producto), data: {
+        turbo_method: :delete,
+        turbo_confirm: 'Alerta, ¿estás seguro?'
+    } %>
+<% end %>

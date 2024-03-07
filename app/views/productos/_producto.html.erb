@@ -1,7 +1,15 @@
-<%= link_to producto_path(producto.id), class: 'producto' do %>
-  <h2><%= producto.titulo %></h2>
-  <!-- if producto.photo.attached? comprueba si el producto tiene foto -->
-  <%= image_tag producto.photo, width: 200 if producto.photo.attached? %>
-  <br>
-  <span>S/.<%= producto.price %></span>
+<%= link_to producto_path(producto.id), class: 'producto-container link-unstyled', 'data-turbo-frame': '_top' do %>
+  <div class="producto-wrapper">
+    <div class="producto-photo">
+      <% if producto.photo.attached? %>
+        <%= image_tag producto.photo, class: 'producto-image', width: 200 %>
+      <% end %>
+    </div>
+    <br>
+    <h2 class="producto-title"><%= producto.titulo %></h2>
+    <h4 class="producto-description"><%= producto.description %></h4>
+    <span class="producto-price">S/.<%= producto.price %></span>
+  </div>
 <% end %>
+
+

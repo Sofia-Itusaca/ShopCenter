@@ -1,8 +1,9 @@
 class ProductosController < ApplicationController
-  before_action :producto, only: [:show, :edit, :update, :destroy]
+  skip_before_action :protect_pages, only: [:index, :show]
 
   def index
-    @productos = Producto.all
+    @categories = Category.order(name: :asc).load_async
+    @pagy, @productos = pagy_countless(FindProductos.new.call(producto_prams_index), items: 12)
   end
 
   def new
@@ -29,6 +30,7 @@ class ProductosController < ApplicationController
   end
 
   def update
+    @producto = Producto.find(params[:id])
     if @producto.update(producto_params)
       redirect_to producto_path(@producto), notice: "El producto ha sido actualizado correctamente"
     else
@@ -37,8 +39,13 @@ class ProductosController < ApplicationController
   end
 
   def destroy
-    @producto.destroy
-    redirect_to productos_path, notice: t('.destroyed'), status: :see_other
+    @producto = Producto.find(params[:id])
+    if @producto
+      @producto.destroy
+      redirect_to productos_path, notice: t('.destroyed'), status: :see_other
+    else
+      redirect_to productos_path, alert: "El producto no existe"
+    end
   end
 
 
@@ -49,7 +56,10 @@ class ProductosController < ApplicationController
     params.require(:producto).permit(:titulo, :description, :price, :color, :stock, :category_id, :talla_id, :photo)
   end
   
-  
+  def producto_prams_index
+    params.permit(:category_id, :min_price, :max_price, :query_text, :order_by)
+  end
+
   def producto
     @producto =  Producto.find(params[:id])
     #return @product

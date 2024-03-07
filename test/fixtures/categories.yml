@@ -1,7 +1,39 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+Blusa:
+  name: Blusa
 
-one:
-  name: MyString
+abrigo:
+  name: abrigo
 
-two:
-  name: MyString
+Pantalones:
+  name: Pantalones
+
+Camiseta:
+  name: Camiseta
+
+Chaqueta:
+  name: Chaqueta
+
+Vestido:
+  name: Vestido
+
+Falda:
+  name: Falda
+
+Sudadera:
+  name: Sudadera
+
+Traje_de_baño:
+  name: Traje de baño
+
+Chaleco:
+  name: Chaleco
+
+Sombrero:
+  name: Sombrero
+
+Zapatos:
+  name: Zapatos
+
+Bufanda:
+  name: Bufanda
