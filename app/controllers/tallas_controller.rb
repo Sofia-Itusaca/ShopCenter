@@ -1,6 +1,5 @@
 class TallasController < ApplicationController
-
-  # GET /tallas or /tallas.json
+  before_action :authorize!
   def index
     @tallas = Talla.all
   end

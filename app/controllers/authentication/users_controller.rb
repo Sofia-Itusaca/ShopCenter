@@ -1,5 +1,5 @@
 class Authentication::UsersController<ApplicationController
-  skip_before_action :protect_pages
+  skip_before_action :protect_pages_admin
   before_action :require_admin, only: [:edit, :update, :destroy]
   def new
     @user = User.new

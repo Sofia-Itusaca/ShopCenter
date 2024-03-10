@@ -1,28 +1,21 @@
-<div class="row align-items-center">
-  <div class="col bg-danger">
-    <div id="main-container">
-      <div>
-        <%= link_to productos_path do %>
-          <h1>BELLA BOUTIQUE</h1>
-        <% end %>
-      </div>
-      <div>
-        <% if Current.user && Current.user.admin? %>
-          <%= link_to "Añadir producto", new_producto_path %>
-          <%= link_to "Category", categories_path %>
-          <%= link_to "Talla", tallas_path %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-  <div class="col bg-primary"></div>
-  <div class="col-auto ml-auto bg-success">
-    <!-- Tercera columna para el botón de inicio de sesión -->
-    <div class="text-right">
-      <%= link_to new_session_path, class: 'btn btn-primary' do %>
-        <i class="fas fa-sign-in-alt"></i> Iniciar sesión
-      <% end %>
-    </div>
-  </div>
-</div>
+<%= link_to productos_path do %>
+  <h1>SHOP CENTER</h1>
+ 
+  <% if Current.user.nil? %>
+    <%= link_to "Login", new_session_path %>
+  <% end %>
+  
+  <%= link_to "Logout", session_path(Current.user.id), data: { 
+  turbo_method: :delete,
+  turbo_confirm: "Esta seguro?"
+  } if Current.user %>
+  
+  
+  
+  
+  <%= link_to "Añadir producto", new_producto_path if Current.user && Current.user.admin? %>
+  <%= link_to "Categorias", categories_path if Current.user && Current.user.admin?%>
+  <%= link_to "Favoritos", favorites_path if Current.user && !Current.user.admin?%>
 
+<% end %>
+  

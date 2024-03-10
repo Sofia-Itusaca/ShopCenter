@@ -1,7 +1,7 @@
 <%= form_with(model: @user) do |form| %>
     <div >
       <%= form.label :email %>
-      <%= form.email_field :email %>
+      <%= form.email_field :email, required: true %>
       <% if @user.errors[:email].any? %>
         <div class="error-message"><%= @user.errors[:email].first %></div>
       <% end %>
@@ -9,7 +9,7 @@
   
     <div >
       <%= form.label :username %>
-      <%= form.text_field :username %>
+      <%= form.text_field :username, required: true %>
       <% if @user.errors[:username].any? %>
         <div class="error-message"><%= @user.errors[:username].first %></div>
       <% end %>
@@ -17,7 +17,7 @@
   
     <div >
       <%= form.label :password %>
-      <%= form.password_field :password %>
+      <%= form.password_field :password, required: true %>
       <% if @user.errors[:password].any? %>
         <div class="error-message"><%= @user.errors[:password].first %></div>
       <% end %>

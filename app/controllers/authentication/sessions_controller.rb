@@ -1,5 +1,5 @@
 class Authentication::SessionsController<ApplicationController
-  skip_before_action :protect_pages
+  skip_before_action :protect_pages_admin
 
   def new
   end
@@ -14,5 +14,10 @@ class Authentication::SessionsController<ApplicationController
     else
         redirect_to new_session_path, alert: "user/password incorrectos"
     end
+  end
+
+  def destroy
+    session.delete(:user_id)
+    redirect_to productos_path, notice: "Session Cerrada con exito"
   end
 end

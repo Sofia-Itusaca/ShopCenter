@@ -14,6 +14,8 @@ def initialize(productos = initial_scope)
     scoped = filter_by_max_price(scoped, params[:max_price])
     # Aplica el filtrado por texto de búsqueda
     scoped = filter_by_query_text(scoped, params[:query_text])
+    # Aplica el filtrado por favoritos
+    scoped = filter_by_favorites(scoped, params[:favorites])
     # Aplica el ordenamiento
     sort(scoped, params[:order_by])
   end
@@ -40,6 +42,16 @@ def initialize(productos = initial_scope)
   def filter_by_query_text(scoped, query_text)
     return scoped unless query_text.present?
     scoped.search_full_text(query_text)
+  end
+
+  def filter_by_favorites(scoped, favorites)
+    return scoped unless favorites.present?
+  
+    if Current.user
+      scoped.joins(:favorites).where({favorites: { user_id: Current.user.id }})
+    else
+      scoped.none
+    end
   end
 
   def sort(scoped, order_by)

@@ -7,7 +7,10 @@
     </div>
     <br>
     <h2 class="producto-title"><%= producto.titulo %></h2>
-    <h4 class="producto-description"><%= producto.description %></h4>
+    <textarea class="producto-description" readonly>
+      <%= producto.description %>
+    </textarea>
+    <br>
     <span class="producto-price">S/.<%= producto.price %></span>
   </div>
 <% end %>

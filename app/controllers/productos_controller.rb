@@ -1,5 +1,5 @@
 class ProductosController < ApplicationController
-  skip_before_action :protect_pages, only: [:index, :show]
+  skip_before_action :protect_pages_admin, only: [:index, :show]
 
   def index
     @categories = Category.order(name: :asc).load_async
@@ -7,11 +7,13 @@ class ProductosController < ApplicationController
   end
 
   def new
+    authorize!
     @producto = Producto.new
     @tallas = Talla.all.order(name: :asc)
   end
 
   def create
+    authorize!
     @producto = Producto.new(producto_params)
 
     if @producto.save
@@ -26,6 +28,7 @@ class ProductosController < ApplicationController
   end
 
   def edit
+    authorize!
     @producto = Producto.find(params[:id])
   end
 
@@ -57,7 +60,7 @@ class ProductosController < ApplicationController
   end
   
   def producto_prams_index
-    params.permit(:category_id, :min_price, :max_price, :query_text, :order_by)
+    params.permit(:category_id, :min_price, :max_price, :query_text, :order_by, :page, :favorites)
   end
 
   def producto
