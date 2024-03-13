@@ -53,6 +53,15 @@ class ProductosController < ApplicationController
     end
   end
 
+  def add_to_cart
+    if current_user
+      product = Producto.find(params[:id])
+      current_user.cart_items.create(producto: producto, quantity: 1)
+      redirect_to productos_path, notice: 'Producto añadido al carrito'
+    else
+      redirect_to login_path, alert: 'Debes iniciar sesión para añadir productos al carrito'
+    end
+  end
 
 
   private

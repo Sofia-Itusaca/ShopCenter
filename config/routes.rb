@@ -5,7 +5,8 @@ Rails.application.routes.draw do
     resources :users, only: [:new, :create],path: '/register', path_names: {new: '/'}
     resources :sessions, only: [:new, :create, :destroy],path: '/login', path_names: {new: '/'}
   end
-
+  
+  resources :carritos, only: [:index, :create], param: :producto_id
   resources :favorites, only: [:index, :create, :destroy], param: :producto_id
   resources :users, only: :show, path: '/user', param: :username
 
@@ -17,9 +18,6 @@ Rails.application.routes.draw do
 
   resources :productos 
 
-  namespace :carrito, path: '',as: '' do
-    resources :carts, only: [:index, :show]
-    resources :cart_items, only: [:index, :show , :create, :update, :destroy]
-  end
+  
   
 end

@@ -1,6 +1,6 @@
 <div class="flex flex-row">
   <% if Current.user && !Current.user.admin? %>
-    <%= link_to  cart_items_path , class: 'flex flex-row mx-2 text-teal-500 font-bold' do %>
+    <%= link_to  carritos_path , class: 'flex flex-row mx-2 text-teal-500 font-bold' do %>
       <%= image_tag 'icons/shop.svg', width: 30, height: 30, class: 'mr-2' %>
       <span>Carrito</span>
     <% end %>

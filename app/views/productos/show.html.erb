@@ -6,15 +6,18 @@
 <span class='price'>Precio : <%=@producto.price%></span>
 <br>
 <br>
-<%= link_to cart_items_path(product_id: @producto.id), data: { turbo_method: :post }, class: "flex items-center " do %>
+
+
+
+<% unless Current.user && Current.user.admin? %>
+  <%= link_to carritos_path(producto_id: @producto.id), data: { turbo_method: :post }, class: "flex items-center" do %>
     <div class="flex items-center bg-green-600 rounded p-2 hover:bg-green-400">
-      <p class="mr-2">Añadir al carrito</p>
       <%= image_tag 'icons/shop.svg', width: 35, height: 35 %>
+      <p class="ml-2">Añadir al carrito</p>
     </div>
   <% end %>
-  
-  
-  
+<% end %>
+
   
 <% if Current.user && Current.user.admin? %>
     <%= link_to "Editar Producto", edit_producto_path(@producto) %>
