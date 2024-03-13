@@ -1,0 +1,19 @@
+<div class="flex flex-row">
+  <% if Current.user && !Current.user.admin? %>
+    <%= link_to productos_path, class: 'flex flex-row mx-2 text-teal-500 font-bold' do %>
+      <%= image_tag 'icons/shop.svg', width: 30, height: 30, class: 'mr-2' %>
+      <span>Carrito</span>
+    <% end %>
+  <% end %>
+
+  <%= link_to "Añadir producto", new_producto_path, class:"mx-2 text-teal-500 font-bold" if Current.user && Current.user.admin? %>
+  <%= link_to "Categorias", categories_path, class:"mx-2 text-teal-500 font-bold" if Current.user && Current.user.admin? %>
+  <%= link_to "Tallas", tallas_path, class:"mx-2 text-teal-500 font-bold" if Current.user && Current.user.admin? %>
+  <%= link_to "Favoritos", favorites_path, class:"mx-2 text-teal-500 font-bold" if Current.user && !Current.user.admin? %>
+
+  <% if Current.user.nil? %>
+    <%= link_to "Login", new_session_path, class:"mx-2 text-teal-500 font-bold" %>
+  <% end %>
+
+  <%= link_to "Logout", session_path(Current.user.id), data: { turbo_method: :delete, turbo_confirm: "¿Está seguro?" }, class:"mx-2 text-teal-500 font-bold" if Current.user %>
+</div>

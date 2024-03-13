@@ -1,17 +1,11 @@
-<%= link_to producto_path(producto.id), class: 'producto-container link-unstyled', 'data-turbo-frame': '_top' do %>
-  <div class="producto-wrapper">
-    <div class="producto-photo">
-      <% if producto.photo.attached? %>
-        <%= image_tag producto.photo, class: 'producto-image', width: 200 %>
-      <% end %>
-    </div>
+<%= link_to producto_path(producto.id), class:"Producto bg-white mb-2 rounded sm:w-[calc(33.33333%_-_.5rem)] lg:w-[calc(25%_-_.5rem)]" , 'data-turbo-frame': '_top' do %>
+  <%= image_tag producto.photo.attached? ? producto.photo: 'placeholder.jpg',class:"w-full h-60 object-cover"  %>
+  <br>
+  <div class="m-2">
+    <h2 class="font-bold txt-xl"><%= producto.titulo %></h2>
+    <p class="text-gray-500 text-sm mt-2"><%= producto.description %></p>
     <br>
-    <h2 class="producto-title"><%= producto.titulo %></h2>
-    <textarea class="producto-description" readonly>
-      <%= producto.description %>
-    </textarea>
-    <br>
-    <span class="producto-price">S/.<%= producto.price %></span>
+    <span class="font-bold text-red-600">S/.<%= producto.price %></span>
   </div>
 <% end %>
 

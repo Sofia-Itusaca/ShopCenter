@@ -4,6 +4,8 @@ class ProductosController < ApplicationController
   def index
     @categories = Category.order(name: :asc).load_async
     @pagy, @productos = pagy_countless(FindProductos.new.call(producto_prams_index), items: 12)
+    #@pagy, @productos = pagy(FindProductos.new.call(producto_prams_index), items: 12)
+
   end
 
   def new
@@ -58,7 +60,7 @@ class ProductosController < ApplicationController
   def producto_params
     params.require(:producto).permit(:titulo, :description, :price, :color, :stock, :category_id, :talla_id, :photo)
   end
-  
+
   def producto_prams_index
     params.permit(:category_id, :min_price, :max_price, :query_text, :order_by, :page, :favorites)
   end

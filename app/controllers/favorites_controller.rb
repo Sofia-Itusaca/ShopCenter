@@ -14,9 +14,11 @@ class FavoritesController < ApplicationController
         end
         format.turbo_stream do
           render turbo_stream: turbo_stream.replace(
-            "favorite", partial: "productos/favorite", 
-            locals: { producto: producto })
-        end
+            "favorite",                          # El ID del elemento HTML que se reemplazará
+            partial: "productos/favorite",       # La ruta al partial que se utilizará para renderizar el contenido
+            locals: { producto: producto }       # Las variables locales que se pasan al partial
+          )
+        end        
       end
     end
   
@@ -28,9 +30,12 @@ class FavoritesController < ApplicationController
         end
         format.turbo_stream do
           render turbo_stream: turbo_stream.replace(
-            "favorite", partial: "productos/favorite", 
-            locals: { producto: producto })
+            "favorite",                          # El ID del elemento HTML que se reemplazará
+            partial: "productos/favorite",       # La ruta al partial que se utilizará para renderizar el contenido
+            locals: { producto: producto }       # Las variables locales que se pasan al partial
+          )
         end
+        
       end
     end
   

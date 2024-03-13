@@ -48,6 +48,13 @@ gem "pg_search", "~> 2.3"
 # paginación
 gem "pagy", "~> 6.5"
 
+
+
+# Use Tailwind CSS for stylesheets 
+gem "tailwindcss-rails", "~> 2.3"
+
+gem 'foreman'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
@@ -77,7 +84,6 @@ group :test do
   gem "webdrivers"
 
 end
-
 
 
 
