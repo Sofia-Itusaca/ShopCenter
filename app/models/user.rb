@@ -21,7 +21,9 @@ class User < ApplicationRecord
 
   #antes de guardar se llama a ese metodo
   before_save :downcase_attributes
-  
+  has_many :carts
+
+
   def admin?
     admin
   end

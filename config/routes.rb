@@ -17,5 +17,9 @@ Rails.application.routes.draw do
 
   resources :productos 
 
- 
+  namespace :carrito, path: '',as: '' do
+    resources :carts, only: [:index, :show]
+    resources :cart_items, only: [:index, :show , :create, :update, :destroy]
+  end
+  
 end

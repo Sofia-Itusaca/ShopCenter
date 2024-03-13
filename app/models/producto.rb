@@ -27,6 +27,8 @@ class Producto < ApplicationRecord
 
   belongs_to :talla
 
+  has_many :cart_items
+  
   def favorite!
     favorites.create(user: Current.user)
   end
