@@ -1,0 +1,39 @@
+<table>
+  <thead>
+    <tr>
+      <th>Producto</th>
+      <th>Precio</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% if @carritos.present? %>
+    <% @carritos.each do |carrito| %>
+      <tr>
+        <td><%= carrito.producto.titulo %></td>
+        <td><%= carrito.producto.price %></td>
+        <td>
+          <% if Current.user && !Current.user.admin? %>
+              <%= link_to "Eliminar", carrito_path(carrito), data: {
+                  turbo_method: :delete,
+                  turbo_confirm: 'Alerta, ¿estás seguro?'
+              } %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  <% else %>
+    <tr>
+      <td colspan="3">No hay productos en el carrito.</td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<% if @carritos.present? %>
+  <tr>
+    <td colspan="2">Total:</td>
+    <td><%= @carritos.sum { |carrito| carrito.producto.price } %></td>
+  </tr>
+<% end %>
+

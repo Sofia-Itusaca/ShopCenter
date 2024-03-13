@@ -28,6 +28,7 @@
       <%= form.number_field :quantity, class: "quantity-input", min: 1 %>
       <%= form.submit "Agregar al carrito", class: "btn-submit" %>
     <% end %>
+    
   </div>
 </div>
 
@@ -44,6 +45,7 @@
 <%= render partial: 'favorite', locals: { producto: @producto } %>
 
 
+
 <script>
   // Get the modal
   var modal = document.getElementById("quantity-modal");
@@ -51,9 +53,11 @@
   // Get the link that opens the modal
   var link = document.getElementById("add-to-cart-link");
 
+  // Get the form inside the modal
+  var form = document.getElementById("add-to-cart-form");
 
-  // Get the <span> element that closes the modal
-  var span = document.getElementsByClassName("close")[0];
+  // Get the input field for quantity
+  var quantityInput = document.querySelector(".quantity-input");
 
   // When the user clicks the link, open the modal
   link.onclick = function(event) {
@@ -62,7 +66,13 @@
     modal.style.display = "block";
   }
 
+  // When the user submits the form, close the modal
+  form.onsubmit = function() {
+    modal.style.display = "none";
+  }
+
   // When the user clicks on <span> (x), close the modal
+  var span = document.getElementsByClassName("close")[0];
   span.onclick = function() {
     modal.style.display = "none";
   }
@@ -77,6 +87,9 @@
   // Submit the form when clicking "Agregar al carrito"
   var submitBtn = document.querySelector(".btn-submit");
   submitBtn.addEventListener("click", function() {
-    document.getElementById("add-to-cart-form").submit();
+    // Set the value of the hidden input field to the quantity input value
+    document.getElementById("quantity").value = quantityInput.value;
+    // Submit the form
+    form.submit();
   });
 </script>

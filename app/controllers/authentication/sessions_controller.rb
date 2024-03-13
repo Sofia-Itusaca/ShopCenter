@@ -17,7 +17,12 @@ class Authentication::SessionsController<ApplicationController
   end
 
   def destroy
+    # Encuentra todos los elementos del carrito asociados al usuario actual
+    carritos = Carrito.where(user: Current.user)
+
+    # Elimina todos los elementos del carrito asociados al usuario actual
+    carritos.destroy_all if carritos.any?
     session.delete(:user_id)
-    redirect_to productos_path, notice: "Session Cerrada con exito"
+    redirect_to productos_path, notice: "Has cerrado sesión correctamente."
   end
 end

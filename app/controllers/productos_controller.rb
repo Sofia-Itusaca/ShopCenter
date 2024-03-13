@@ -47,7 +47,7 @@ class ProductosController < ApplicationController
     @producto = Producto.find(params[:id])
     if @producto
       @producto.destroy
-      redirect_to productos_path, notice: t('.destroyed'), status: :see_other
+      redirect_to productos_path, notice: "Producto eliminado con èxito", status: :see_other
     else
       redirect_to productos_path, alert: "El producto no existe"
     end
