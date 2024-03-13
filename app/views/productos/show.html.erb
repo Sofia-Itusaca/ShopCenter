@@ -10,13 +10,26 @@
 
 
 <% unless Current.user && Current.user.admin? %>
-  <%= link_to carritos_path(producto_id: @producto.id), data: { turbo_method: :post }, class: "flex items-center" do %>
+  <%= link_to "#", id: "add-to-cart-link", class: "flex items-center", data: { turbo_method: :post } do %>
     <div class="flex items-center bg-green-600 rounded p-2 hover:bg-green-400">
       <%= image_tag 'icons/shop.svg', width: 35, height: 35 %>
       <p class="ml-2">Añadir al carrito</p>
     </div>
   <% end %>
 <% end %>
+
+<div id="quantity-modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Ingresa la cantidad:</p>
+    <%= form_with(url: carritos_path, method: :post, id: "add-to-cart-form") do |form| %>
+      <%= form.hidden_field :producto_id, value: @producto.id %>
+      <%= form.label :Nº %>
+      <%= form.number_field :quantity, class: "quantity-input", min: 1 %>
+      <%= form.submit "Agregar al carrito", class: "btn-submit" %>
+    <% end %>
+  </div>
+</div>
 
   
 <% if Current.user && Current.user.admin? %>
@@ -29,3 +42,41 @@
 <% end %>
 
 <%= render partial: 'favorite', locals: { producto: @producto } %>
+
+
+<script>
+  // Get the modal
+  var modal = document.getElementById("quantity-modal");
+
+  // Get the link that opens the modal
+  var link = document.getElementById("add-to-cart-link");
+
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+
+  // When the user clicks the link, open the modal
+  link.onclick = function(event) {
+    event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
+    event.stopPropagation(); // Evitar la propagación del evento
+    modal.style.display = "block";
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+
+  // Submit the form when clicking "Agregar al carrito"
+  var submitBtn = document.querySelector(".btn-submit");
+  submitBtn.addEventListener("click", function() {
+    document.getElementById("add-to-cart-form").submit();
+  });
+</script>
