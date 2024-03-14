@@ -49,7 +49,6 @@ gem "pg_search", "~> 2.3"
 gem "pagy", "~> 6.5"
 
 
-
 # Use Tailwind CSS for stylesheets 
 gem "tailwindcss-rails", "~> 2.3"
 
