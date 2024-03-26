@@ -22,7 +22,7 @@ chaqueta:
   price: 80
   color: Marrón
   stock: 8
-  category: Chaqueta
+  category: Pantalones
   talla: Mediano
 
 vestido:
@@ -31,7 +31,7 @@ vestido:
   price: 45
   color: Rosa
   stock: 15
-  category: Vestido
+  category: Pantalones
   talla: extra_grande
 
 falda:
@@ -40,7 +40,7 @@ falda:
   price: 35
   color: Negro
   stock: 12
-  category: Falda
+  category: Pantalones
   talla: extra_extra_grande
 
 sudadera:
@@ -49,7 +49,7 @@ sudadera:
   price: 30
   color: Gris
   stock: 18
-  category: Sudadera
+  category: Pantalones
   talla: Small
 
 traje_de_baño:
@@ -58,7 +58,7 @@ traje_de_baño:
   price: 60
   color: Rojo
   stock: 7
-  category: Traje_de_baño
+  category: Pantalones
   talla: Gordo
 
 chaleco:
@@ -67,7 +67,7 @@ chaleco:
   price: 55
   color: Verde
   stock: 9
-  category: Chaleco
+  category: Pantalones
   talla: Mediano
 
 sombrero:
@@ -76,7 +76,7 @@ sombrero:
   price: 20
   color: Beige
   stock: 25
-  category: Sombrero
+  category: Pantalones
   talla: extra_grande
 
 zapatos:
@@ -85,7 +85,7 @@ zapatos:
   price: 70
   color: Negro
   stock: 14
-  category: Zapatos
+  category: Pantalones
   talla: extra_extra_grande
 
 gorra:
@@ -94,7 +94,7 @@ gorra:
   price: 10
   color: Azul marino
   stock: 30
-  category: Gorra
+  category: Pantalones
   talla: Mediano
 
 bufanda:
@@ -103,7 +103,7 @@ bufanda:
   price: 25
   color: Gris
   stock: 17
-  category: Bufanda
+  category: Pantalones
   talla: extra_grande
 
 calcetines:
@@ -112,7 +112,7 @@ calcetines:
   price: 8
   color: Blanco
   stock: 22
-  category: Calcetines
+  category: Pantalones
   talla: Small
 
 abrigo_de_invierno:
@@ -121,7 +121,7 @@ abrigo_de_invierno:
   price: 120
   color: Negro
   stock: 6
-  category: Abrigo
+  category: Pantalones
   talla: extra_extra_grande
 
 pantalones_cortos:
@@ -139,7 +139,7 @@ camisa:
   price: 40
   color: Blanco
   stock: 13
-  category: Camisa
+  category: Pantalones
   talla: Small
 
 chaqueta_de_plumas:
@@ -148,7 +148,7 @@ chaqueta_de_plumas:
   price: 90
   color: Azul oscuro
   stock: 5
-  category: Chaqueta
+  category: Pantalones
   talla: extra_extra_grande
 
 falda_larga:
@@ -157,7 +157,7 @@ falda_larga:
   price: 55
   color: Amarillo
   stock: 11
-  category: Falda
+  category: Pantalones
   talla: Gordo
 
 chándal:
@@ -166,7 +166,7 @@ chándal:
   price: 70
   color: Gris oscuro
   stock: 9
-  category: Chándal
+  category: Pantalones
   talla: Mediano
 
 suéter:
@@ -175,7 +175,7 @@ suéter:
   price: 100
   color: Beige
   stock: 8
-  category: Suéter
+  category: Pantalones
   talla: extra_extra_grande
 
 botas:
@@ -184,7 +184,7 @@ botas:
   price: 85
   color: Marrón oscuro
   stock: 10
-  category: Botas
+  category: Pantalones
   talla: Mediano
 
 gorro:
@@ -193,7 +193,7 @@ gorro:
   price: 15
   color: Rojo
   stock: 21
-  category: Gorro
+  category: Pantalones
   talla: extra_grande
 
 corbata:
@@ -202,7 +202,7 @@ corbata:
   price: 30
   color: Negro
   stock: 18
-  category: Corbata
+  category: Pantalones
   talla: Gordo
 
 leggings:
@@ -211,7 +211,7 @@ leggings:
   price: 18
   color: Negro
   stock: 16
-  category: Leggings
+  category: Pantalones
   talla: extra_extra_grande
 
 sombrero_de_sol:
@@ -220,7 +220,7 @@ sombrero_de_sol:
   price: 25
   color: Blanco
   stock: 24
-  category: Sombrero
+  category: Pantalones
   talla: Mediano
 
 chaqueta_de_cuero:
@@ -229,7 +229,7 @@ chaqueta_de_cuero:
   price: 150
   color: Marrón
   stock: 7
-  category: Chaqueta
+  category: Pantalones
   talla: extra_extra_grande
 
 bufanda_infantil:
@@ -238,7 +238,7 @@ bufanda_infantil:
   price: 12
   color: Multicolor
   stock: 32
-  category: Bufanda
+  category: Pantalones
   talla: Small
 
 mallas:
@@ -247,7 +247,7 @@ mallas:
   price: 35
   color: Negro
   stock: 19
-  category: Mallas
+  category: Pantalones
   talla: Gordo
 
 bufanda_de_cachemira:
@@ -256,5 +256,5 @@ bufanda_de_cachemira:
   price: 70
   color: Gris claro
   stock: 14
-  category: Bufanda
+  category: Pantalones
   talla: Mediano

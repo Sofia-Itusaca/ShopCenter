@@ -1,0 +1,42 @@
+<div class="cargos pt-4">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <!--
+        <a href="/payu" class="btn btn-link">Nuevo Cobro con PayU</a>
+        <a href="/epayco" class="btn btn-link">Nuevo Cobro con ePayco</a>
+        -->
+        <table class="table mt-3">
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Referencia</th>
+              <th>Valor</th>
+              <th>Estado</th>
+              <th>Método de pago</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @cargos.each do |cargo| %>
+              <tr>
+                <td><%= cargo.created_at %></td>
+                <td><%= cargo.uid %></td>
+                <td><%= cargo.monto %></td>
+
+                <td>
+                  <%= cargo.estado %>
+                  <% if cargo.mensaje_error %>
+                    <small style="display: block;"><%= cargo.mensaje_error %></small>
+                  <% end %>
+                </td>
+                <td><%= cargo.metodo_pago %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>
+
+</div>

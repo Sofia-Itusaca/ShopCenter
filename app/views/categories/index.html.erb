@@ -1,7 +1,32 @@
 
-<h1>Categories</h1>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <h1 class="text-center text-2xl font-bold text-teal-500">Categorias</h1>
+    </div>
+  </div>
+</div>
 
-<%=render partial: 'category', collection: @categories %>
+<table class="table mt-3">
+  <% @categories.each do |category| %>
+    <tr id="<%= dom_id(category) %>">
+      <td><%= category.name %></td>
+      <td><%= link_to "Edit", edit_category_path(category), class: "btn btn-primary btn-sm"  %></td>
+      <td><%= link_to "Delete", category_path(category), data: { turbo_method: :delete, turbo_confirm: "Alerta, ¿estás seguro?" }, class: "btn btn-danger btn-sm" %></td>
+    </tr>
+  <% end %>
+</table>
 
 
-<%= link_to "New category", new_category_path %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <%= link_to new_category_path, class: "btn d-flex align-items-center custom-btn",  style: "text-align: left; border: 2px solid #17E010;"  do %>
+        <%= image_tag 'icons/add.svg', width: 35, height: 35 %>
+        <p class="ml-2" style="font-weight: bold;">Nueva categoría</p>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+

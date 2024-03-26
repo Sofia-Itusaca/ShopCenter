@@ -1,0 +1,189 @@
+.Container {
+    margin: 0;
+    padding: 0;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    background: linear-gradient(to bottom right, #8A2BE2, #4169E1);
+    /* Degradado de morado a azul */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+
+.Formulario-Transparente {
+    position: absolute;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 20;
+}
+
+.Formulario-Transparente h2 {
+    text-align: left;
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    /* Tamaño de letra */
+    font-weight: bold;
+    padding: 0 0 20px 0;
+    color: white;
+}
+
+.Formulario-Transparente form {
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+form .usuario {
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+
+.usuario input {
+    color: white;
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.usuario label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+}
+
+.usuario span::before {
+    content: "";
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #8c8c8c;
+    transition: 0.5s;
+}
+
+.usuario input:focus~label,
+.usuario input:valid~label {
+    top: -5px;
+    color: #8c8c8c;
+}
+
+.usuario input:focus~span::before,
+.usuario input:valid~span::before {
+    width: 100%;
+}
+
+form .recuerdame {
+    color: white;
+}
+
+.ingresar {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: #c7000b;
+    /* Color de fondo sólido */
+    color: white;
+    transition: background-color 0.1s;
+}
+
+.ingresar:hover {
+    background-color: #e50914;
+    /* Cambiar el color de fondo al pasar el cursor sobre el botón */
+}
+
+
+.btn-Google {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: #1c1890;
+    color: white;
+    transition: background-color 0.1s;
+}
+
+.btn-Google:hover {
+    background-color: #0001fd;
+    /* Cambiar el color de fondo al pasar el cursor sobre el botón */
+}
+
+.Registrar {
+    margin: 30px 0;
+    text-align: left;
+    font-size: 16px;
+    color: white;
+}
+
+.Registrar a {
+    text-decoration: none;
+}
+
+.Registrar a:hover {
+    text-decoration: underline;
+}
+
+/*para crear el formulario de crear cuenta*/
+.Crear-Cuenta {
+    position: absolute;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 20;
+}
+
+.Crear-Cuenta h2 {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    /* Tamaño de letra */
+    font-weight: bold;
+    padding: 0 0 20px 0;
+    color: white;
+}
+
+.Crear-Cuenta form {
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.btn_Cerrar_Session {
+    width: 10%;
+    padding: 5 5px;
+    height: 5%;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(28, 24, 144, 0.5);
+    color: white;
+    transition: background-color 0.1s;
+
+    /*para que este posicionado al lado derecho */
+    position: absolute;
+    top: 2%;
+    left: 89%;
+}
+
+.btn_Cerrar_Session:hover {
+    background-color: #0001fd;
+}

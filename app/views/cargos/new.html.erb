@@ -1,0 +1,21 @@
+<div class="cargo-form pt-4">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-5">
+        <%= form_for @cargo do |f| %>
+          <div class="form-group">
+            <%= f.label :monto %>
+            <!-- Muestra el monto en un elemento <span> -->
+            <span class="form-control"><%= params[:total] %></span>
+            <!-- Agregar campo oculto para enviar el monto al controlador -->
+            <%= f.hidden_field :monto, value: params[:total] %>
+          </div>
+          <div>
+            <%= link_to "Cancel", carritos_path, class: "btn btn-outline-secondary" %>
+            <%= f.submit "Pagar", class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>    
+</div>

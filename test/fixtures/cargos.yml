@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  uid: MyString
+  estado: 1
+  metodo_pago: 1
+  monto: 9.99
+  mensaje_error: MyText
+  datos_respuesta: 
+
+two:
+  uid: MyString
+  estado: 1
+  metodo_pago: 1
+  monto: 9.99
+  mensaje_error: MyText
+  datos_respuesta: 

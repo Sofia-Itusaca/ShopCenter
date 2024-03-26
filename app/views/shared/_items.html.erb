@@ -5,7 +5,7 @@
       <span>Carrito</span>
     <% end %>
   <% end %>
-
+  <%= link_to "Pagos realizados", cargos_path, class:"mx-2 text-teal-500 font-bold" if Current.user && Current.user.admin? %>
   <%= link_to "Añadir producto", new_producto_path, class:"mx-2 text-teal-500 font-bold" if Current.user && Current.user.admin? %>
   <%= link_to "Categorias", categories_path, class:"mx-2 text-teal-500 font-bold" if Current.user && Current.user.admin? %>
   <%= link_to "Tallas", tallas_path, class:"mx-2 text-teal-500 font-bold" if Current.user && Current.user.admin? %>

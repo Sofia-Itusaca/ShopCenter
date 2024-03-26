@@ -2,47 +2,41 @@ require "test_helper"
 
 class CategoriesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @category = categories(:one)
+    login # Inicia sesión antes de cada prueba
+    @category = categories(:Clothes) # Establece una instancia de categoría para las pruebas, usando fixtures
   end
 
-  test "should get index" do
-    get categories_url
-    assert_response :success
+  test "debería obtener el índice" do
+    get categories_url # Realiza una solicitud GET a la URL del índice de categorías
+    assert_response :success # Verifica que la respuesta sea exitosa
   end
 
-  test "should get new" do
-    get new_category_url
-    assert_response :success
+  test "debería obtener nuevo" do
+    get new_category_url # Realiza una solicitud GET a la URL para crear una nueva categoría
+    assert_response :success # Verifica que la página de nueva categoría se renderice correctamente
   end
 
-  test "should create category" do
-    assert_difference("Category.count") do
-      post categories_url, params: { category: { name: @category.name } }
+  test "debería crear una categoría" do
+    assert_difference("Category.count") do # Espera que la cantidad de categorías aumente en 1 después de la creación
+      post categories_url, params: { category: { name: @category.name } } # Realiza una solicitud POST para crear una categoría
     end
-
-    assert_redirected_to category_url(Category.last)
+    assert_redirected_to categories_url # Verifica que se redirija a la página de índice de categorías después de la creación
   end
 
-  test "should show category" do
-    get category_url(@category)
-    assert_response :success
+  test "editar categoria" do
+    get edit_category_url(@category) # Realiza una solicitud GET a la URL de edición de la categoría especificada
+    assert_response :success # Verifica que la página de edición se renderice correctamente
   end
 
-  test "should get edit" do
-    get edit_category_url(@category)
-    assert_response :success
+  test "actualizar categoria" do
+    patch category_url(@category), params: { category: { name: @category.name } } # Realiza una solicitud PATCH para actualizar la categoría
+    assert_redirected_to categories_url # Verifica que se redirija a la página de índice de categorías después de la actualización
   end
 
-  test "should update category" do
-    patch category_url(@category), params: { category: { name: @category.name } }
-    assert_redirected_to category_url(@category)
-  end
-
-  test "should destroy category" do
-    assert_difference("Category.count", -1) do
-      delete category_url(@category)
+  test "eliminar categoria" do
+    assert_difference("Category.count", -1) do # Espera que la cantidad de categorías disminuya en 1 después de la eliminación
+      delete category_url(@category) # Realiza una solicitud DELETE para eliminar la categoría especificada
     end
-
-    assert_redirected_to categories_url
+    assert_redirected_to categories_url # Verifica que se redirija a la página de índice de categorías después de la eliminación
   end
 end

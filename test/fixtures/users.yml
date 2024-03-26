@@ -3,11 +3,11 @@
 admin:
   email: admin@shopcenter.com
   username: admin
-  password_digest: admin*
+  password_digest: <%= BCrypt::Password.create('admin*').to_s %>
   admin: true
 
 prueba:
   email: prueba@shopcenter.com
   username: prueba
-  password_digest: prueba*
+  password_digest: <%= BCrypt::Password.create('prueva*').to_s %>
   admin: false

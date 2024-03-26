@@ -1,16 +1,46 @@
-<%= form_with(url: sessions_path) do |form| %>
-  <div >
-    <%= form.label :login %>
-    <%= form.text_field :login, required: true%>
-  </div>
 
-  <div >
-    <%= form.label :password %>
-    <%= form.password_field :password , required: true%>
-  </div>
-  <%= link_to "Registrarse", new_user_path%>
+<div class="Container">
   <div>
-  <%= form.submit 'Ingresar' %>
-</div>
+    <%= link_to productos_path do %>
+      <%= image_tag 'icons/volver.svg', width: 35, height: 35, alt: 'Ver productos' %>
+    <%end%>
+  </div>
+  <div class="Formulario-Transparente SesionCerrada" style="display: block">
+    <%= form_with(url: sessions_path, id: "Form_inicio_sesion") do |form| %>
+      <h2>Inicia sesión</h2>
+      <div class="usuario">
+        <%= form.text_field :login, id: "cuenta", class: "form-control", required: true %>
+        <label for="cuenta">Cuenta de usuario</label>
+        <span></span>
+      </div>
 
-<% end %>
+      <div class="usuario">
+        <%= form.password_field :password, id: "password", class: "form-control", required: true %>
+        <label for="password">Contraseña</label>
+        <span></span>
+      </div>
+
+      <div class="recuerdame">
+        <%= form.check_box :recuerdame, id: "recuerdame" %>
+        <%= form.label :recuerdame, "Recuerdame" %>
+      </div>
+
+      <%= form.submit "Iniciar sesión", id: "enviar", class: "ingresar" %>
+
+    <% end %>
+    <%= form_tag '#', method: :post do %>
+      <%= button_tag type: 'button', class: 'btn-Google', id: 'btn-Google', style: 'text-align: center' do %>
+        <strong>Iniciar con cuenta Google</strong>
+        <%= image_tag 'google.png', style: 'width: 20px; float: left', alt: 'Google' %>
+      <% end %>
+      <div class="Registrar">
+        ¿No tiene cuenta registrada?
+        <%= link_to new_user_path, class: 'Registrar', id: 'Registrar' do %>
+          <strong>Registrar ahora</strong>
+        <% end %>
+      </div>
+    <% end %>
+
+  </div>
+
+</div>

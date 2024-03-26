@@ -1,12 +1,10 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-Blusa:
-  name: Blusa
-
-abrigo:
-  name: abrigo
-
+Clothes:
+  name: Ropa
 Pantalones:
   name: Pantalones
+
+Bufanda:
+  name: Bufanda
 
 Camiseta:
   name: Camiseta
@@ -23,7 +21,7 @@ Falda:
 Sudadera:
   name: Sudadera
 
-Traje_de_baño:
+Traje:
   name: Traje de baño
 
 Chaleco:
@@ -35,5 +33,29 @@ Sombrero:
 Zapatos:
   name: Zapatos
 
-Bufanda:
-  name: Bufanda
+Gorra:
+  name: Gorra
+
+Calcetines:
+  name: Calcetines
+
+Abrigo:
+  name: Abrigo
+
+Chándal:
+  name: Chándal
+
+Suéter:
+  name: Suéter
+
+Botas:
+  name: Botas
+
+Corbata:
+  name: Corbata
+
+Leggings:
+  name: Leggings
+
+Mallas:
+  name: Mallas

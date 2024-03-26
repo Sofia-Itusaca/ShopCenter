@@ -2,47 +2,45 @@ require "test_helper"
 
 class TallasControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @talla = tallas(:one)
+    login # Suponiendo que tienes un método llamado login para iniciar sesión en tus pruebas
+    @talla = tallas(:None) 
   end
 
-  test "should get index" do
+  test "debería obtener el índice" do
     get tallas_url
     assert_response :success
   end
 
-  test "should get new" do
+  test "debería obtener nuevo" do
     get new_talla_url
     assert_response :success
   end
 
-  test "should create talla" do
+  test "debería crear una talla" do
     assert_difference("Talla.count") do
       post tallas_url, params: { talla: { name: @talla.name } }
     end
 
-    assert_redirected_to talla_url(Talla.last)
+    assert_redirected_to tallas_url
   end
 
-  test "should show talla" do
-    get talla_url(@talla)
-    assert_response :success
-  end
-
-  test "should get edit" do
+  test "editar talla" do
     get edit_talla_url(@talla)
     assert_response :success
   end
 
-  test "should update talla" do
+  test "actualizar talla" do
     patch talla_url(@talla), params: { talla: { name: @talla.name } }
-    assert_redirected_to talla_url(@talla)
+    assert_redirected_to tallas_url
   end
 
-  test "should destroy talla" do
+  test "eliminar talla" do
     assert_difference("Talla.count", -1) do
       delete talla_url(@talla)
     end
 
     assert_redirected_to tallas_url
   end
+
+
 end

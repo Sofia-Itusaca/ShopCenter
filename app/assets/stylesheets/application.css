@@ -15,7 +15,7 @@
  */
 
 
-.flash {
+ .flash {
     padding: 10px;
     margin-bottom: 15px;
     display: 'none';
@@ -30,4 +30,38 @@
     background-color: red;
     color: white;
 
+}
+
+.hidden {
+    display: none;
+}
+
+/* Estilo por defecto del botón */
+.btn-primary {
+    background-color: white;
+    /* Azul por defecto */
+    color: black;
+    /* Letras blancas por defecto */
+    border-color: #007bff;
+    /* Color del borde igual al color de fondo */
+}
+
+/* Estilo del botón al hacer hover */
+.btn-primary:hover {
+    background-color: #007bff;
+    /* Blanco al hacer hover */
+    color: black;
+    /* Letras negras al hacer hover */
+}
+
+custom-btn {
+    border: 2px solid #17E010;
+    /* Solo el borde exterior verde */
+    background-color: white;
+    /* Fondo blanco por defecto */
+}
+
+.custom-btn:hover {
+    background-color: #17E010;
+    /* Fondo verde al hacer hover */
 }

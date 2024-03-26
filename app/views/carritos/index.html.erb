@@ -1,4 +1,4 @@
-<table>
+<table class="table mt-3">
   <thead>
     <tr>
       <th>Producto</th>
@@ -14,11 +14,8 @@
         <td><%= carrito.producto.price %></td>
         <td>
           <% if Current.user && !Current.user.admin? %>
-              <%= link_to "Eliminar", carrito_path(carrito), data: {
-                  turbo_method: :delete,
-                  turbo_confirm: 'Alerta, ¿estás seguro?'
-              } %>
-          <% end %>
+            <%= link_to "Eliminar", carrito_path(carrito), data: { turbo_method: :delete, turbo_confirm: 'Alerta, ¿estás seguro?' }, class: "btn btn-danger btn-sm" %>
+          <% end %> 
         </td>
       </tr>
     <% end %>
@@ -34,6 +31,14 @@
   <tr>
     <td colspan="2">Total:</td>
     <td><%= @carritos.sum { |carrito| carrito.producto.price } %></td>
+    <br>
+    <td>
+      <%= link_to new_cargo_path(total: @carritos.sum { |carrito| carrito.producto.price }), class: "btn btn-sm d-inline-flex  custom-btn", style: "text-align: left; border: 2px solid #17E010;" do %>
+        <%= image_tag 'icons/pagar.svg', width: 35, height: 35 %>
+        <p class="ml-2" style="font-weight: bold;">Pagar</p>
+      <% end %>
+    </td>
   </tr>
 <% end %>
+
 
